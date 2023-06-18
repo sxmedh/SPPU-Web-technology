@@ -1,0 +1,23 @@
+SHOW TABLES;
+
+CREATE db;
+
+USE db;
+
+CREATE TABLE my_table(id INT(4),name VARCHAR(20));
+
+INSERT INTO my_table VALUES(1,'SHILPA');
+
+SELECT * FROM my_table where id=1;
+
+SELECT * FROM my_table where name=’SHILPA’;
+
+SELECT * FROM my_table;
+
+UPDATE my_table SET name='PRIYANKA' WHERE id=4;
+
+DELETE FROM my_table WHERE id=3;
+
+SELECT Customer.Name, Customer.city, Order.Order_Number
+FROM Customer INNER JOIN Order
+ON Customer.Cust_Id=Order.Order_Id

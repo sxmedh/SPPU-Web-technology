@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Username Availability</title>
+    <script>
+      function checkUsernameAvailability() {
+        var username = document.getElementById("username").value;
+        var xml = new XMLHttpRequest();
+        xml.onreadystatechange = function () {
+          if (xml.readyState === 4 && xml.status === 200) {
+            document.getElementById("availability").innerHTML =
+              xml.responseText;
+          }
+        };
+        xml.open(
+          "GET",
+          "checkUsernameAvailability.jsp?username=" +
+            encodeURIComponent(username),
+          true
+        );
+        xml.send();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Check Username Availability</h1>
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      oninput="checkUsernameAvailability()"
+    />
+    <div id="availability"></div>
+  </body>
+</html>
+
+<!-- <%@ page contentType="text/plain" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%
+    String username = request.getParameter("username");
+    
+    // Your logic to check username availability
+    List<String> usernames = new ArrayList<>();
+    usernames.add("john");
+    usernames.add("jane");
+    
+    String response;
+    if (usernames.contains(username)) {
+        response = "Username " + username + " is not available.";
+    } else {
+        response = "Username " + username + " is available.";
+    }
+    
+    out.println(response);
+%> -->

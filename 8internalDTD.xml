@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+    <!ELEMENT student (name, major, age)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT major (#PCDATA)>
+    <!ELEMENT age (#PCDATA)>
+]>
+
+// <!DOCTYPE students SYSTEM "students.dtd"> if you are writing external dtd
+<students>
+    <student id="1">
+        <name>John Doe</name>
+        <major>Computer Science</major>
+        <age>20</age>
+    </student>
+    <student id="2">
+        <name>Jane Smith</name>
+        <major>Mathematics</major>
+        <age>22</age>
+    </student>
+</students>
