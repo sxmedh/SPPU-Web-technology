@@ -4,7 +4,7 @@ import javax.servlet.http.*;
 
 public class helloWorld extends HttpServlet{
     
-    public void doGet(HttpServletRequest request, HttpsServletresponse response) 
+    public void doGet(HttpServletRequest request, HttpServletResponse response) 
     throws ServletException, IOException{
         response.setContentType("text/html");
         PrinterWriter out = response.getWriter();

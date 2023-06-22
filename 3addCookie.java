@@ -17,7 +17,7 @@ public class addCookie extends HttpServlet {
         response.addCookie(cookie);
         // Write friendly output to browser.
         response.setContentType("text/html");
-        PrintWriter out = request.getWriter();
+        PrintWriter out = response.getWriter();
         out.println("<h2>MyCookie has been set to : ");
         out.println(txt_data);
         out.println("<br><br><br>");
